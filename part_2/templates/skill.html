@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <title>Title</title>
+</head>
+<body>
+<div class="single__content_wrapper">
+    <div class="single__content">
+    {% if cands_data %}
+        <h1>Найдено со скиллом {{cands_num}}:</h1>
+        {% for cand in cands_data %}
+            <p><a href="/candidate/{{ cand['id'] }}">{{ cand['name'] }}</a></p>
+        {% endfor %}
+    {% else %}
+        <h1>Не найдено подхоящих кандидатов</h1>
+    {% endif %}
+        <center><a href="/">На главную</a></center>
+    </div>
+</div>
+</body>
+</html>

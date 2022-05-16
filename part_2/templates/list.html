@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <title>Main Page</title>
+</head>
+<body>
+<div class="single__content_wrapper">
+    <div class="single__content">
+
+        <div>
+            <h1>Все кандидаты</h1>
+            {% for cand in cands_data %}
+                <p><a href="/candidate/{{ cand['id'] }}">{{ cand['name'] }}</a></p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
